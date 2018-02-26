@@ -60,8 +60,17 @@ int main() {
   }
    
   c.red = 255;
-  
   draw_lines(image, s, c);
+
+  struct matrix *imageH = new_matrix(4,4);
+  for (i = 0; i < 10; i ++){
+    add_edge(imageH, 300, 175+i, 0, 250, 225+i, 0);
+  }
+
+  c.red = 0;
+  draw_lines(imageH, s, c);
+  free_matrix( imageH );
+  
   display(s);
   free_matrix( edges );
   free_matrix( image );
