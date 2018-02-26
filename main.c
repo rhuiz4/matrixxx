@@ -73,10 +73,12 @@ int main() {
 
   c.red = 0;
   draw_lines(imageH, s, c);
-  free_matrix( imageH );
   
   display(s);
+
+  save_extension(s, "image.png");
   free_matrix( edges );
   free_matrix( image );
+  free_matrix( imageH );
   free_matrix( identity );
 }
