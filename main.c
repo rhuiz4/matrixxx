@@ -56,7 +56,7 @@ int main() {
     add_edge(image, 250+i, 100, 0, 250+i, 450, 0);
   }
   for (i = 0; i < 50; i++){
-    add_edge(image, 200, 150+i, 0, 250, 150+i, 0);
+    add_edge(image, 150, 150+i, 0, 250, 150+i, 0);
   }
    
   c.red = 255;
