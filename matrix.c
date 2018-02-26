@@ -14,11 +14,11 @@ print the matrix
 void print_matrix(struct matrix *m) {
   int r;
   int c;
-  for (r = 0; r < 4; r++){
-    printf("\n");
+  for (r = 0; r < m->rows; r++){
     for (c = 0; c < m->lastcol; c++){
-      printf("%f\t",m->m[r][c]);
+      printf("%0.1f\t",m->m[r][c]);
     }
+    printf("\n");
   }
 }
 
@@ -31,7 +31,7 @@ turns m in to an identity matrix
 void ident(struct matrix *m) {
   int r;
   int c;
-  int size = m->cols;
+  int size = m->rows;
   for(r = 0; r < size; r++){
     for(c = 0; c < size; c++){
       if(r == c)
@@ -39,6 +39,7 @@ void ident(struct matrix *m) {
       else
 	m->m[r][c] = 0;
     }
+    m->lastcol = size;
   }
 }
 
@@ -54,7 +55,7 @@ void matrix_mult(struct matrix *a, struct matrix *b) {
   int r;
   int c;
   int i;
-  struct matrix *m = new_matrix(b->rows, b->cols);
+  struct matrix *m = new_matrix(a->rows, b->cols);
   for(r = 0; r < m->rows; r++){
     for(c = 0; c < m->cols; c++){
       int ans = 0;
