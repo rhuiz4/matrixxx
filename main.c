@@ -67,6 +67,10 @@ int main() {
     add_edge(imageH, 300, 175+i, 0, 250, 225+i, 0);
   }
 
+  for (i = 0; i < 10; i ++){
+    add_edge(imageH, 300, 175-i, 0, 250, 125-i, 0);
+  }
+
   c.red = 0;
   draw_lines(imageH, s, c);
   free_matrix( imageH );
