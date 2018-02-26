@@ -50,17 +50,12 @@ int main() {
   
   int i;
   for (i = 0; i < 50; i++){
-    add_edge(image, 50+i, 50, 0, 450+i, 450, 0);
-    }
-  /*
-  add_edge(image, 50, 50, 0, 450, 450, 0);
-  add_edge(image, 51, 50, 0, 451, 450, 0);
-  add_edge(image, 52, 50, 0, 452, 450, 0);
-  add_edge(image, 53, 50, 0, 453, 450, 0);
-  add_edge(image, 54, 50, 0, 454, 450, 0);
-  add_edge(image, 55, 50, 0, 455, 450, 0);
-  */
-  
+    add_edge(image, 50+i, 50, 0, 150+i, 450, 0);
+  }
+  for (i = 0; i < 50; i++){
+    add_edge(image, 100+i, 50, 0, 100+i, 450, 0);
+  }
+   
   c.red = 255;
   
   draw_lines(image, s, c);
